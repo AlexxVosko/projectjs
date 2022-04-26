@@ -1,27 +1,24 @@
 //console.log(5);
 'use strict';
 
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-function fib(num) {
-    if(typeof(num)!=="number" || num<0 || !Number.isInteger(num) ){
-        return ``;
-    }
-
-    let str = '';
-    let first=0;
-    let second=1;
-    let other;
-    for(let i=0; i<num;i++){
-        if(i===num){
-            str+=`${first}`;
-        }else{
-            str+=`${first} `;
+function availableCurr(arr, missingCurr) {
+    let str='';
+    if(arr.length<1){
+        str+=`Нет доступных валют`;
+    }else{
+        str+=`Доступные валюты:\n`
+        //str+=`Доступные валюты:\n${arr.join('\n')}`;
+        for (let value of arr){
+            if(value!==missingCurr){
+                str+=`${value}\n`;
+            }
         }
-        other=first+second;
-        first = second;
-        second =  other;
     }
-    return str;
+return str;
 }
 
-console.log(fib(8));
+
+console.log(availableCurr([...baseCurrencies,...additionalCurrencies],'CNY'));
