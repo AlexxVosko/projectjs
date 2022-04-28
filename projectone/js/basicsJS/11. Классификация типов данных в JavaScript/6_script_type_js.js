@@ -7,6 +7,8 @@ console.log(4/0); // - Получим Infinity (Числовой тип данн
                   //который означает бесконечнось и относится к примитивам, числам)
 console.log(-4/0); // -Infinity
 
+console.log(typeof(NaN)); // число (number)
+
 console.log('string' * 9); // NaN (`Not a Number - Не число)
 
 // 2) Строка
