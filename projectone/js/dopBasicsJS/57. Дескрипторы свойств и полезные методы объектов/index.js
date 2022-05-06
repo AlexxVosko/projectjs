@@ -61,7 +61,7 @@ Object.defineProperties(user,{
     surname:{writable:false}
 });
 
-console.log(Object.getOwnPropertyDescriptor(user,'name'));
+console.log(Object.getOwnPropertyDescriptor(user,birthday));
 
 // Методы объекта
 
