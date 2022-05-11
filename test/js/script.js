@@ -1,17 +1,14 @@
 //console.log(5);
 'use strict';
 
-function factorial(num) {
-    if(typeof(num)!=='number' || !Number.isInteger(num)){
-        return 'Ошибка, введите целое число';
+function deepCount(a){
+    let num=a.length;
+    for(let i=0; i<a.length;i++){
+        if(Array.isArray(a[i])){
+            num+= deepCount(a[i]);
+        }
     }
-    if(num<=0){
-        return 1;
-    }else{
-        return num*(factorial(num-1));
-    }    
+    return num;
 }
-console.log(factorial('dd'));
-console.log(factorial(5.3));
-console.log(factorial(-5));
-console.log(factorial(3));
+console.log(deepCount(["1", 5, "3", ["10",3]]));
+console.log(deepCount([[[[[[[[[]]]]]]]]]));
