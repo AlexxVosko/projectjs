@@ -77,10 +77,11 @@ window.addEventListener("DOMContentLoaded",()=>{
 
             fetch('server.php',{
                 method:'POST',
+
                 headers:{
                     'Content-type':'application/json'
                 },
-                bode:JSON.stringify(object)
+                body:JSON.stringify(object)
             })
             .then(data=>data.text())
             .then(data=>{
