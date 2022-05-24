@@ -1,22 +1,44 @@
 //console.log(5);
 'use strict';
 
-const funds = [
-    {amount: -1400},
-    {amount: 2400},
-    {amount: -1000},
-    {amount: 500},
-    {amount: 10400},
-    {amount: -11400}
-];
+class UserClass{
+    constructor (name,age){
+        this.name = name;
+        // скрытие в классе
+        this._age = age;
+    }
 
-const getPositiveIncomeAmount = (data) => {
-    return data.filter(item=> item.amount>0)
-           .reduce((sum,current)=> sum+current.amount,0);
-};
-console.log(getPositiveIncomeAmount(funds));
+    say = ()=>{
+        console.log(`Имя пользователя ${this.name} ${this.#surname}, возраст - ${this._age}`);
+    }
 
-const getTotalIncomeAmount = (data) => {
-    return data.some(item => item.amount < 0) ? data.reduce((sum,current)=> sum+current.amount,0) : getPositiveIncomeAmount(data);
-};
-console.log(getTotalIncomeAmount(funds));
+    get age(){
+        return  this._age;
+    }
+    set age (age){
+        if(typeof(age) === 'number' && age>0 && age < 110){
+            this._age = age;
+        }else{
+            console.log('Недопустимое значение');
+        }
+    }
+
+    // свойство записывается в объект только без конструктора (работает только в chrome)
+     #surname = 'Vosko';
+
+     // получить приватное свойство
+     get surnamGet (){
+        return this.#surname;
+     }
+
+    // изменить приватное свойство
+    set surnameSet(name){
+        this.#surname = name;
+    }
+}
+const  ivan3 = new UserClass ('Ivan', '25');
+
+console.log(ivan3.surname); // undefined
+console.log(ivan3.surnamGet); // Vosko
+ivan3.surnameSet='Voskobobich';
+console.log(ivan3.surnamGet);

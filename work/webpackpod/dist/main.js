@@ -1,0 +1,1 @@
+(()=>{"use strict";var o={404:o=>{o.exports=function(){this.hello=function(){console.log("hello")},this.goodBye=function(){console.log("bye!")}}}},e={};function t(n){var r=e[n];if(void 0!==r)return r.exports;var s=e[n]={exports:{}};return o[n](s,s.exports,t),s.exports}(()=>{const o=new(t(404));o.hello(),o.goodBye()})()})();
