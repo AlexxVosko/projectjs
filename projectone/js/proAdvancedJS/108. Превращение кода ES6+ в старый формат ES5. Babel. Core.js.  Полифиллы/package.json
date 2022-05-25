@@ -1,0 +1,36 @@
+{
+    "name": "projectjs-main",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+      "test": "test"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/AlexxVosko/projectjs.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/AlexxVosko/projectjs/issues"
+    },
+    "homepage": "https://github.com/AlexxVosko/projectjs#readme",
+    "browserslist" :[
+      "> 1%"
+    ],
+    "devDependencies": {
+      "@babel/cli": "^7.17.10",
+      "@babel/core": "^7.18.0",
+      "@babel/preset-env": "^7.18.0",
+      "json-server": "^0.17.0",
+      "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+      "@babel/polyfill": "^7.12.1"
+    }
+  }
+  
