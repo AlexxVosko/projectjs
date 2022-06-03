@@ -36,14 +36,14 @@
 // Размонтирование 
 // componentWillUnmount()
 
-componentDidMount(){
+componentDidMount () {
     //вызов метода updareChar
     this.updareChar();
-    this.timerId = setInterval(this.updareChar, 3000)
-}
+    this.timerId = setInterval(this.updareChar, 3000);
+};
 componentDidUpdate(){
-    console.log('update')
-}
+    console.log('update');
+};
 componentWillUnmount(){
     clearInterval(this.timerId);
-}
+};
